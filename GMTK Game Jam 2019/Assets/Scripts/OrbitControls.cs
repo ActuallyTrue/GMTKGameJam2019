@@ -85,6 +85,7 @@ public class OrbitControls : MonoBehaviour
 
     private void Shoot()
     {
+        //print("Shoot");
         Bullet.transform.parent = null;
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Bullet.transform.position;
         direction.Normalize();
@@ -92,7 +93,7 @@ public class OrbitControls : MonoBehaviour
         BulletRB.velocity = direction * BulletSpeed;
         LookingForPlayer = false;
         BulletDefending = false;
-        
+
         audioSource.pitch = 1.0f;
         audioSource.PlayOneShot(fireSFX);
     }

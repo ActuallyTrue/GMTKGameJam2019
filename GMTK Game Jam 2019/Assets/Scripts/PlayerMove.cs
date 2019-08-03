@@ -95,12 +95,14 @@ public class PlayerMove : MonoBehaviour
 
     private void ReturnProjectile()
     {
-
-        Vector2 direction = Orbitter.transform.position - Bullet.transform.position;
-        direction.Normalize();
-        BulletRB.isKinematic = true;
-        BulletRB.velocity = direction * 30;
-        LookingForPlayer = true;
+        if (Orbitter != null)
+        {
+            Vector2 direction = Orbitter.transform.position - Bullet.transform.position;
+            direction.Normalize();
+            BulletRB.isKinematic = true;
+            BulletRB.velocity = direction * 30;
+            LookingForPlayer = true;
+        }
     }
 
     private void BounceProjectile()
