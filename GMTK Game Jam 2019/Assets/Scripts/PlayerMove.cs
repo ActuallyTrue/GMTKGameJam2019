@@ -7,14 +7,6 @@ public class PlayerMove : MonoBehaviour
 
     public bool InstantMotion = true;
     public float Speed = 5f;
-    public OrbitControls Orbitter;
-    public GameObject Bullet;
-    private Rigidbody2D BulletRB;
-    public LayerMask bulletCollisionMask;
-    public Transform raycastFirePoint;
-    public bool repeatedFire = false;
-
-    bool LookingForPlayer = false;
 
     Rigidbody2D rBody;
     // Start is called before the first frame update
@@ -22,8 +14,6 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
-        BulletRB = Bullet.GetComponent<Rigidbody2D>();
-        Orbitter = GetComponentInChildren<OrbitControls>();
     }
 
 
@@ -38,90 +28,8 @@ public class PlayerMove : MonoBehaviour
         {
             Move();
         }
-
-        if(!repeatedFire)
-        {
-            if(Bullet.transform.parent != null)
-            {
-                if (Input.GetAxis("Fire1") != 0)
-                {
-                    Shoot();
-                }
-            }
-        }
-
-        else
-        {
-            if (Input.GetAxis("Fire1") != 0)
-            {
-                Shoot();
-            }
-        }
-
-        if (Input.GetAxis("Fire2") != 0)
-        {
-            ReturnProjectile();
-        }
-        /*
-        if (BulletRB.isKinematic == false) //look into this and see why it's not coming back
-        {
-            BounceProjectile();
-        }//*/
-
-        if (LookingForPlayer)
-        {
-            Vector2 direction = Orbitter.transform.position - Bullet.transform.position;
-            direction.Normalize();
-            BulletRB.isKinematic = true;
-            BulletRB.velocity = direction * 30;
-            if ((Bullet.transform.position - Orbitter.transform.position).magnitude <= 3.0f)
-            {
-                Bullet.transform.parent = Orbitter.transform;
-                BulletRB.velocity = new Vector2(0, 0);
-                LookingForPlayer = false;
-            }
-        }
-       
     }
 
-    private void Shoot()
-    {
-        Orbitter.Shoot();
-
-        Bullet.transform.parent = null;
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Bullet.transform.position;
-        direction.Normalize();
-        BulletRB.isKinematic = false;
-        BulletRB.velocity = direction * 30;
-        LookingForPlayer = false;
-    }
-
-    private void ReturnProjectile()
-    {
-        if (Orbitter != null)
-        {
-            Vector2 direction = Orbitter.transform.position - Bullet.transform.position;
-            direction.Normalize();
-            BulletRB.isKinematic = true;
-            BulletRB.velocity = direction * 30;
-            LookingForPlayer = true;
-        }
-    }
-
-    private void BounceProjectile()
-    {
-        Ray ray = new Ray(raycastFirePoint.position, Bullet.transform.up); 
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Mathf.Sqrt(Mathf.Pow(BulletRB.velocity.x,2) + Mathf.Pow(BulletRB.velocity.y,2)) + 0.1f, bulletCollisionMask))
-        {
-            Debug.Log("Enter");
-            Vector2 reflectDir = Vector2.Reflect(ray.direction, hit.normal);
-            reflectDir.Normalize();
-            float rot = 90 - Mathf.Atan2(reflectDir.y, reflectDir.x) * Mathf.Rad2Deg;
-            Bullet.transform.eulerAngles = new Vector3(0, 0, rot);
-            Bullet.GetComponent<Rigidbody2D>().velocity = reflectDir * 30;
-        }
-    }
 
     //checks input axis and sets a velocity for rBody
     private void InstantMove()
