@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dcac216e36deaf4ea8f7666734f24f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeed: 10
+  spinSpeed: 8
 --- !u!50 &2922452209810109343
 Rigidbody2D:
   serializedVersion: 4
@@ -127,7 +127,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2922452210860023259}
   - component: {fileID: 2922452210860023258}
-  - component: {fileID: 2922452210860023260}
   - component: {fileID: 2922452210860023261}
   - component: {fileID: 2922452210860023263}
   - component: {fileID: 2922452210860023262}
@@ -202,19 +201,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2922452210860023260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2922452210860023257}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dcac216e36deaf4ea8f7666734f24f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spinSpeed: 10
 --- !u!114 &2922452210860023261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +217,7 @@ MonoBehaviour:
   Speed: 5
   Orbitter: {fileID: 2922452209810109340}
   Bullet: {fileID: 90816851315066921}
-  LookingForPlayer: 0
+  repeatedFire: 0
 --- !u!50 &2922452210860023263
 Rigidbody2D:
   serializedVersion: 4
@@ -276,11 +262,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2922452209810109341}
     m_Modifications:
-    - target: {fileID: 2035075008509419157, guid: 090e30dff09a9cb46b9cbe55b3d31357,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerBullet
-      objectReference: {fileID: 0}
     - target: {fileID: 2035075008509419163, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -294,7 +275,7 @@ PrefabInstance:
     - target: {fileID: 2035075008509419163, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.257797
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2035075008509419163, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
@@ -335,6 +316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035075008509419157, guid: 090e30dff09a9cb46b9cbe55b3d31357,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerBullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 090e30dff09a9cb46b9cbe55b3d31357, type: 3}
