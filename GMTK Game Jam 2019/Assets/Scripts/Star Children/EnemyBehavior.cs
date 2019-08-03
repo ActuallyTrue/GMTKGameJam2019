@@ -1,7 +1,7 @@
 ﻿public class EnemyBehavior : SimpleAI2D
 {
     private bool isFiring = false;
-
+    private float wanderGoal;
     public float fireRange = 10f;
 
     // Start is called before the first frame update
@@ -25,11 +25,19 @@
         else
         {
             isFiring = false;
+            if (chasing == false)
+            {
+                Wander();
+            }
         }
     }
 
-    bool ShouldFire()
+    public bool ShouldFire()
     {
         return isFiring;
+    }
+    void Wander()
+    {
+        
     }
 }
