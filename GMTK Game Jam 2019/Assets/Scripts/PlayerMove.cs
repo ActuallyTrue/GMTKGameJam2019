@@ -9,8 +9,9 @@ public class PlayerMove : MonoBehaviour
     public float Speed = 5f;
     public GameObject Orbitter;
     public GameObject Bullet;
+    public bool repeatedFire = false;
 
-    public bool LookingForPlayer = false;
+    bool LookingForPlayer = false;
 
     Rigidbody2D rBody;
     // Start is called before the first frame update
@@ -32,13 +33,28 @@ public class PlayerMove : MonoBehaviour
             Move();
         }
 
-        if(Input.GetAxis("Fire1") != 0)
+        if(!repeatedFire)
         {
-            Shoot();
+            if(Bullet.transform.parent != null)
+            {
+                if (Input.GetAxis("Fire1") != 0)
+                {
+                    Shoot();
+                }
+            }
+        }
+
+        else
+        {
+            if (Input.GetAxis("Fire1") != 0)
+            {
+                Shoot();
+            }
         }
 
         if (Input.GetAxis("Fire2") != 0)
         {
+            Debug.Log("returning");
             ReturnProjectile();
         }
 
