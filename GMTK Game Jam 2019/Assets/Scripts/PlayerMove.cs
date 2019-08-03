@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
+    public bool InstantMotion = true;
     public float speed = 5f;
 
     Rigidbody2D rBody;
@@ -15,29 +16,58 @@ public class PlayerMove : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
-        Move();
+        if(InstantMotion)
+        {
+            InstantMove();
+        }
+        else
+        {
+            Move();
+        }
     }
 
 
     //checks input axis and sets a velocity for rBody
+    private void InstantMove()
+    {
+
+        if (!Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 0) && !Mathf.Approximately(Input.GetAxisRaw("Vertical"), 0))
+        {
+            //rBody.velocity = new Vector3(0,0,0);
+            rBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed * 100 * Time.deltaTime, Input.GetAxisRaw("Vertical") * speed * 100 * Time.deltaTime) * 0.707f;
+        }
+
+        else if (!Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 0) || !Mathf.Approximately(Input.GetAxisRaw("Vertical"), 0))
+        {
+            //rBody.velocity = new Vector3(0, 0, 0);
+            rBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed * 100 * Time.deltaTime, Input.GetAxisRaw("Vertical") * speed * 100 * Time.deltaTime);
+        }
+        else
+        {
+            rBody.velocity = new Vector3(0,0,0);
+        }
+    }
+
     private void Move()
     {
 
-        if (Input.GetAxis("Horizontal") != 0 & Input.GetAxis("Vertical") != 0)
+        if (!Mathf.Approximately(Input.GetAxis("Horizontal"), 0) && !Mathf.Approximately(Input.GetAxis("Vertical"), 0))
         {
+            //rBody.velocity = new Vector3(0,0,0);
             rBody.velocity = new Vector2(Input.GetAxis("Horizontal") * speed * 100 * Time.deltaTime, Input.GetAxis("Vertical") * speed * 100 * Time.deltaTime) * 0.707f;
         }
 
-        else if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        else if (!Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 0) || !Mathf.Approximately(Input.GetAxisRaw("Vertical"), 0))
         {
+            //rBody.velocity = new Vector3(0, 0, 0);
             rBody.velocity = new Vector2(Input.GetAxis("Horizontal") * speed * 100 * Time.deltaTime, Input.GetAxis("Vertical") * speed * 100 * Time.deltaTime);
         }
         else
         {
-            rBody.velocity = rBody.velocity * 0;
+            rBody.velocity = new Vector3(0, 0, 0);
         }
     }
 }
