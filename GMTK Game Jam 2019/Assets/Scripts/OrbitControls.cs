@@ -12,12 +12,19 @@ public class OrbitControls : MonoBehaviour
 
     public bool repeatedFire = false;
 
+    //sounds
+    private AudioSource audioSource;
+    public AudioClip fireSFX;
+    public AudioClip[] swingSFX;
+
+
     bool LookingForPlayer = false;
 
     // Start is called before the first frame update
     void Start()
     {
         BulletRB = Bullet.GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +37,12 @@ public class OrbitControls : MonoBehaviour
                 if (Input.GetAxis("Fire1") != 0)
                 {
                     Shoot();
+                }
+                if (!audioSource.isPlaying)
+                {
+                    int source = Random.Range(0, swingSFX.Length);
+                    audioSource.pitch = Random.Range(0.8f, 1.2f);
+                    audioSource.PlayOneShot(swingSFX[source]);
                 }
             }
         }
@@ -76,6 +89,9 @@ public class OrbitControls : MonoBehaviour
         BulletRB.isKinematic = false;
         BulletRB.velocity = direction * BulletSpeed;
         LookingForPlayer = false;
+        
+        audioSource.pitch = 1.0f;
+        audioSource.PlayOneShot(fireSFX);
     }
 
     //tells the bullet to return to the player and makes it so the bullet is looking for the player to attach.
