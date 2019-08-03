@@ -60,7 +60,7 @@ public class PlayerMove : MonoBehaviour
             rBody.velocity = new Vector2(Input.GetAxis("Horizontal") * speed * 100 * Time.deltaTime, Input.GetAxis("Vertical") * speed * 100 * Time.deltaTime) * 0.707f;
         }
 
-        else if (!Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 0) || !Mathf.Approximately(Input.GetAxisRaw("Vertical"), 0))
+        else if (!Mathf.Approximately(Input.GetAxis("Horizontal"), 0) || !Mathf.Approximately(Input.GetAxis("Vertical"), 0))
         {
             //rBody.velocity = new Vector3(0, 0, 0);
             rBody.velocity = new Vector2(Input.GetAxis("Horizontal") * speed * 100 * Time.deltaTime, Input.GetAxis("Vertical") * speed * 100 * Time.deltaTime);
