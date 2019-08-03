@@ -65,7 +65,8 @@ public class PlayerMove : MonoBehaviour
 
         Debug.Log((Bullet.transform.position - Orbitter.transform.position).magnitude);
 
-        if (BulletRB.isKinematic == false) {
+        if (BulletRB.isKinematic == false)
+        {
             BounceProjectile();
         }
 
