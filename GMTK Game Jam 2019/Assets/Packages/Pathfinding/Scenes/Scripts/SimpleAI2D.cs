@@ -5,13 +5,14 @@ public class SimpleAI2D : Pathfinding2D
 {
     public uint SearchPerSecond = 5;
     public Transform Player;
-    public float SearchDistance = 20F;
-    public float Speed = 20F;
+    public float SearchDistance = 10f;
+    public float Speed = 2f;
 
     private bool search = true;
-    private float tempDistance = 0F;
+    protected bool chasing = false;
+    protected float tempDistance = 0F;
 
-	void Start () 
+	protected void Start () 
     {
         //Make sure that we dont dividde by 0 in our search timer coroutine
         if (SearchPerSecond == 0)
@@ -22,7 +23,7 @@ public class SimpleAI2D : Pathfinding2D
             SearchDistance = 0;
 	}
 	
-	void Update () 
+	protected void Update () 
     {
         //Make sure we set a player in the inspector!
         if (Player != null)
@@ -40,6 +41,11 @@ public class SimpleAI2D : Pathfinding2D
                 if (tempDistance < SearchDistance)
                 {
                     FindPath(transform.position, Player.position);
+                    chasing = true;
+                }
+                else
+                {
+                    chasing = false;
                 }
             }
 
