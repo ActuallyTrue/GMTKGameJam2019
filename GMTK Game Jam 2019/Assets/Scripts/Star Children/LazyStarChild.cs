@@ -15,7 +15,7 @@ public class LazyStarChild : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fireRate = fireTimer;
+        fireTimer = fireRate;
     }
 
     // Update is called once per frame
