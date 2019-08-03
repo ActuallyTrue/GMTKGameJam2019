@@ -5,6 +5,7 @@ using UnityEngine;
 public class OrbitControls : MonoBehaviour
 {
 
+    public bool BulletDefending = true;
     public GameObject Bullet;
     public float OrbitDistance = 3;
     public float BulletSpeed = 30;
@@ -71,6 +72,7 @@ public class OrbitControls : MonoBehaviour
                 Bullet.transform.parent = gameObject.transform;
                 BulletRB.velocity = new Vector2(0, 0);
                 LookingForPlayer = false;
+                BulletDefending = true;
 
                 //if bullet too close, sets it to be a bit farther away 
                 if ((Bullet.transform.position - gameObject.transform.position).magnitude <= OrbitDistance - 1)
@@ -89,6 +91,7 @@ public class OrbitControls : MonoBehaviour
         BulletRB.isKinematic = false;
         BulletRB.velocity = direction * BulletSpeed;
         LookingForPlayer = false;
+        BulletDefending = false;
         
         audioSource.pitch = 1.0f;
         audioSource.PlayOneShot(fireSFX);
