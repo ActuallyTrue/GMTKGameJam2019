@@ -59,11 +59,8 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetAxis("Fire2") != 0)
         {
-            Debug.Log("returning");
             ReturnProjectile();
         }
-
-        Debug.Log((Bullet.transform.position - Orbitter.transform.position).magnitude);
 
         if (BulletRB.isKinematic == false)
         {
@@ -108,14 +105,16 @@ public class PlayerMove : MonoBehaviour
 
     private void BounceProjectile()
     {
-        Ray ray = new Ray(raycastFirePoint.position, transform.up); 
+        Ray ray = new Ray(raycastFirePoint.position, Bullet.transform.up); 
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, Mathf.Sqrt(Mathf.Pow(BulletRB.velocity.x,2) + Mathf.Pow(BulletRB.velocity.y,2)) + 0.1f, bulletCollisionMask))
         {
-            
+            Debug.Log("Enter");
             Vector2 reflectDir = Vector2.Reflect(ray.direction, hit.normal);
+            reflectDir.Normalize();
             float rot = 90 - Mathf.Atan2(reflectDir.y, reflectDir.x) * Mathf.Rad2Deg;
-            transform.eulerAngles = new Vector3(0, 0, rot);
+            Bullet.transform.eulerAngles = new Vector3(0, 0, rot);
+            Bullet.GetComponent<Rigidbody2D>().velocity = reflectDir * 30;
         }
     }
 
