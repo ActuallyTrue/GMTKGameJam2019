@@ -83,9 +83,9 @@ public class OrbitControls : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    public void Shoot()
     {
-        //print("Shoot");
+        print("Shoot");
         Bullet.transform.parent = null;
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Bullet.transform.position;
         direction.Normalize();

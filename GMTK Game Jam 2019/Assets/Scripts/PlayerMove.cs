@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
 
     public bool InstantMotion = true;
     public float Speed = 5f;
-    public GameObject Orbitter;
+    public OrbitControls Orbitter;
     public GameObject Bullet;
     private Rigidbody2D BulletRB;
     public LayerMask bulletCollisionMask;
@@ -23,6 +23,7 @@ public class PlayerMove : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
         BulletRB = Bullet.GetComponent<Rigidbody2D>();
+        Orbitter = GetComponentInChildren<OrbitControls>();
     }
 
 
@@ -61,11 +62,11 @@ public class PlayerMove : MonoBehaviour
         {
             ReturnProjectile();
         }
-
+        /*
         if (BulletRB.isKinematic == false) //look into this and see why it's not coming back
         {
             BounceProjectile();
-        }
+        }//*/
 
         if (LookingForPlayer)
         {
@@ -85,6 +86,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Shoot()
     {
+        Orbitter.Shoot();
+
         Bullet.transform.parent = null;
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Bullet.transform.position;
         direction.Normalize();
