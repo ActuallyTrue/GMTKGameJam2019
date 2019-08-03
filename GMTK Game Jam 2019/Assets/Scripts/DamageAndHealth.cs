@@ -54,6 +54,7 @@ public class DamageAndHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Damage");
         if (canDealDamage)
         {
             target = collision.gameObject.GetComponent<DamageAndHealth>();
