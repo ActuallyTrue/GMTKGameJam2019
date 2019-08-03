@@ -57,7 +57,6 @@ public class SpecialEffects : MonoBehaviour
                 shrinking = true;
             }
 
-            Debug.Log(shrinking);
             yield return new WaitForSeconds(.5f);
         }
     }
@@ -66,7 +65,6 @@ public class SpecialEffects : MonoBehaviour
     {
         while(true)
         {
-            Debug.Log(transform.localScale.magnitude + " : " + startingScale.magnitude);
             if (shrinking)
             {
                 transform.localScale = transform.localScale * .95f;
