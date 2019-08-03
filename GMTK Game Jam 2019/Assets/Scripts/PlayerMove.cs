@@ -6,7 +6,11 @@ public class PlayerMove : MonoBehaviour
 {
 
     public bool InstantMotion = true;
-    public float speed = 5f;
+    public float Speed = 5f;
+    public GameObject Orbitter;
+    public GameObject Bullet;
+
+    public bool LookingForPlayer = false;
 
     Rigidbody2D rBody;
     // Start is called before the first frame update
@@ -27,8 +31,53 @@ public class PlayerMove : MonoBehaviour
         {
             Move();
         }
+
+        if(Input.GetAxis("Fire1") != 0)
+        {
+            Shoot();
+        }
+
+        if (Input.GetAxis("Fire2") != 0)
+        {
+            ReturnProjectile();
+        }
+
+        Debug.Log((Bullet.transform.position - Orbitter.transform.position).magnitude);
+
+        if (LookingForPlayer)
+        {
+            Vector2 direction = Orbitter.transform.position - Bullet.transform.position;
+            direction.Normalize();
+            Bullet.GetComponent<Rigidbody2D>().isKinematic = true;
+            Bullet.GetComponent<Rigidbody2D>().velocity = direction * 30;
+            if ((Bullet.transform.position - Orbitter.transform.position).magnitude <= 3.0f)
+            {
+                Bullet.transform.parent = Orbitter.transform;
+                Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                LookingForPlayer = false;
+            }
+        }
     }
 
+    private void Shoot()
+    {
+        Bullet.transform.parent = null;
+        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Bullet.transform.position;
+        direction.Normalize();
+        Bullet.GetComponent<Rigidbody2D>().isKinematic = false;
+        Bullet.GetComponent<Rigidbody2D>().velocity = direction * 30;
+        LookingForPlayer = false;
+    }
+
+    private void ReturnProjectile()
+    {
+
+        Vector2 direction = Orbitter.transform.position - Bullet.transform.position;
+        direction.Normalize();
+        Bullet.GetComponent<Rigidbody2D>().isKinematic = true;
+        Bullet.GetComponent<Rigidbody2D>().velocity = direction * 30;
+        LookingForPlayer = true;
+    }
 
     //checks input axis and sets a velocity for rBody
     private void InstantMove()
@@ -37,13 +86,13 @@ public class PlayerMove : MonoBehaviour
         if (!Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 0) && !Mathf.Approximately(Input.GetAxisRaw("Vertical"), 0))
         {
             //rBody.velocity = new Vector3(0,0,0);
-            rBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed * 100 * Time.deltaTime, Input.GetAxisRaw("Vertical") * speed * 100 * Time.deltaTime) * 0.707f;
+            rBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * Speed * 100 * Time.deltaTime, Input.GetAxisRaw("Vertical") * Speed * 100 * Time.deltaTime) * 0.707f;
         }
 
         else if (!Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 0) || !Mathf.Approximately(Input.GetAxisRaw("Vertical"), 0))
         {
             //rBody.velocity = new Vector3(0, 0, 0);
-            rBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed * 100 * Time.deltaTime, Input.GetAxisRaw("Vertical") * speed * 100 * Time.deltaTime);
+            rBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * Speed * 100 * Time.deltaTime, Input.GetAxisRaw("Vertical") * Speed * 100 * Time.deltaTime);
         }
         else
         {
@@ -57,13 +106,13 @@ public class PlayerMove : MonoBehaviour
         if (!Mathf.Approximately(Input.GetAxis("Horizontal"), 0) && !Mathf.Approximately(Input.GetAxis("Vertical"), 0))
         {
             //rBody.velocity = new Vector3(0,0,0);
-            rBody.velocity = new Vector2(Input.GetAxis("Horizontal") * speed * 100 * Time.deltaTime, Input.GetAxis("Vertical") * speed * 100 * Time.deltaTime) * 0.707f;
+            rBody.velocity = new Vector2(Input.GetAxis("Horizontal") * Speed * 100 * Time.deltaTime, Input.GetAxis("Vertical") * Speed * 100 * Time.deltaTime) * 0.707f;
         }
 
         else if (!Mathf.Approximately(Input.GetAxis("Horizontal"), 0) || !Mathf.Approximately(Input.GetAxis("Vertical"), 0))
         {
             //rBody.velocity = new Vector3(0, 0, 0);
-            rBody.velocity = new Vector2(Input.GetAxis("Horizontal") * speed * 100 * Time.deltaTime, Input.GetAxis("Vertical") * speed * 100 * Time.deltaTime);
+            rBody.velocity = new Vector2(Input.GetAxis("Horizontal") * Speed * 100 * Time.deltaTime, Input.GetAxis("Vertical") * Speed * 100 * Time.deltaTime);
         }
         else
         {
