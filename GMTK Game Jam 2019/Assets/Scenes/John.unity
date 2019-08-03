@@ -384,6 +384,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1168036926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 90816851315066921, guid: 32980967dcef99840838ffee49cede7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1238061741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1238061741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -451,6 +457,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2922452210860023261, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 1168036926}
+    - target: {fileID: 2922452210860023261, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: raycastFirePoint
+      value: 
+      objectReference: {fileID: 1825482442}
+    - target: {fileID: 90816851315066917, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 2d64bcf489ab3614bbe791cab7c08480, type: 2}
+    - target: {fileID: 90816851315066916, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 2d64bcf489ab3614bbe791cab7c08480, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32980967dcef99840838ffee49cede7a, type: 3}
 --- !u!1 &1325584697
@@ -742,3 +768,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1825482442 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2922452210860023259, guid: 32980967dcef99840838ffee49cede7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1238061741}
+  m_PrefabAsset: {fileID: 0}
