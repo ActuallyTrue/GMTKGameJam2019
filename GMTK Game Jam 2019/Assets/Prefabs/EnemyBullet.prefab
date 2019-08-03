@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3151700966456747751}
   - component: {fileID: 3151700966456747744}
   - component: {fileID: 3151700966456747745}
-  m_Layer: 0
+  - component: {fileID: 2386547904593512622}
+  m_Layer: 10
   m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,3 +119,25 @@ MonoBehaviour:
   speed: 20
   rBody2D: {fileID: 3151700966456747744}
   TimeUntilDestroy: 2
+--- !u!114 &2386547904593512622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3151700966456747746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641fcfbfb1bba324ab11d40d7078384a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  damage: 1
+  canTakeDamage: 0
+  canDealDamage: 1
+  whatCanDamageYou:
+    serializedVersion: 2
+    m_Bits: 0
+  whatYouCanDamage:
+    serializedVersion: 2
+    m_Bits: 512
