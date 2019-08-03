@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2922452209810109341}
   - component: {fileID: 2922452209810109342}
+  - component: {fileID: 3919458885223423987}
   - component: {fileID: 2922452209810109343}
   - component: {fileID: 2922452209810109312}
   m_Layer: 0
@@ -47,6 +48,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinSpeed: 8
+--- !u!114 &3919458885223423987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922452209810109340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2299ddfc3c9149946956b91450a375ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Orbitter: {fileID: 2922452209810109340}
+  Bullet: {fileID: 90816851315066921}
+  OrbitDistance: 3
+  BulletSpeed: 30
+  repeatedFire: 0
 --- !u!50 &2922452209810109343
 Rigidbody2D:
   serializedVersion: 4
@@ -217,6 +235,12 @@ MonoBehaviour:
   Speed: 5
   Orbitter: {fileID: 2922452209810109340}
   Bullet: {fileID: 90816851315066921}
+  OrbitDistance: 3
+  BulletSpeed: 30
+  bulletCollisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastFirePoint: {fileID: 0}
   repeatedFire: 0
 --- !u!50 &2922452210860023263
 Rigidbody2D:
@@ -262,6 +286,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2922452209810109341}
     m_Modifications:
+    - target: {fileID: 2035075008509419157, guid: 090e30dff09a9cb46b9cbe55b3d31357,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerBullet
+      objectReference: {fileID: 0}
     - target: {fileID: 2035075008509419163, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -316,11 +345,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2035075008509419157, guid: 090e30dff09a9cb46b9cbe55b3d31357,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerBullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 090e30dff09a9cb46b9cbe55b3d31357, type: 3}
