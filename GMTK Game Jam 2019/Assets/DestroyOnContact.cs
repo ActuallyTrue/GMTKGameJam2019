@@ -21,7 +21,7 @@ public class DestroyOnContact : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag != "Player"
-            && col.gameObject.tag != "PlayerBullet"
+            //&& col.gameObject.tag != "PlayerBullet"
             && col.gameObject.tag != "Orbitter")
         {
             Destroy(col.gameObject);
