@@ -46,7 +46,7 @@ public class DamageAndHealth : MonoBehaviour
             if ((whatYouCanDamage == (whatYouCanDamage | (1 << collision.gameObject.layer))) && target.canTakeDamage) //Daniel took the first part of this conditional off of the internet and doesn't know how it works
             {
                 Debug.Log("Damage Taken!");
-                target.TakeDamage(damage);
+                TakeDamage(damage);
             }
 
         }

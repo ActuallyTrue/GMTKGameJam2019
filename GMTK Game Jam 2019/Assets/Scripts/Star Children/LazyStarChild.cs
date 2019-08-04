@@ -9,8 +9,9 @@ public class LazyStarChild : MonoBehaviour
     private float fireTimer;
     public Transform firePoint;
     public GameObject bulletPrefab;
+
     public GameObject Player;
-    public EnemyBehavior enemyBehavior;
+    EnemyBehavior enemyBehavior;
 
 
 
@@ -19,6 +20,10 @@ public class LazyStarChild : MonoBehaviour
     {
         enemyBehavior = GetComponent<EnemyBehavior>();
         fireTimer = fireRate;
+        if(Player.Equals(null))
+        {
+            Player = GameObject.FindWithTag("Player");
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +31,7 @@ public class LazyStarChild : MonoBehaviour
     {
         if (enemyBehavior.ShouldFire())
         {
-            Aim(Player);
+            Aim();
             fireTimer -= Time.deltaTime;
             if (fireTimer <= 0)
             {
@@ -37,7 +42,7 @@ public class LazyStarChild : MonoBehaviour
     }
 
 
-    private void Aim(GameObject Player)
+    private void Aim()
     {
         Vector3 targetDir = transform.position - Player.transform.position;
         float zAngle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 180f;
@@ -46,7 +51,7 @@ public class LazyStarChild : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Instantiate(bulletPrefab, transform.position, transform.rotation);
     }
 
     private void Die()
