@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8269557fb03bd147b0a327a4a05f54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.5
+  fireRate: 1.2
   firePoint: {fileID: 5624891248631883314}
   bulletPrefab: {fileID: 3151700966456747746, guid: b8a34185b54bacd419025f3b54f8116b,
     type: 3}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641fcfbfb1bba324ab11d40d7078384a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 2
   damage: 1
   canTakeDamage: 1
   canDealDamage: 1
@@ -157,11 +157,11 @@ MonoBehaviour:
   JS: 0
   SearchPerSecond: 5
   Player: {fileID: 0}
-  SearchDistance: 25
+  SearchDistance: 8
   Speed: 2
   ArrivedThreshold: 3
-  fireRange: 15
-  wanderDistance: 15
+  fireRange: 6.2
+  wanderDistance: 5
   wanderArriveThreshold: 1
 --- !u!70 &3703117125682443986
 CapsuleCollider2D:
