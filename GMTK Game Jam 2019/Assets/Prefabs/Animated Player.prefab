@@ -29,8 +29,14 @@ PrefabInstance:
     - target: {fileID: 2922452210860023257, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Animated Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2922452210860023258, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d49352248adf8b48b6f7da669f13b12,
+        type: 3}
     - target: {fileID: 2922452210860023259, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -101,12 +107,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.99054927
       objectReference: {fileID: 0}
-    - target: {fileID: 2922452210860023258, guid: 32980967dcef99840838ffee49cede7a,
+    - target: {fileID: 90816851315066919, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0d49352248adf8b48b6f7da669f13b12,
-        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.44
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32980967dcef99840838ffee49cede7a, type: 3}
 --- !u!1 &4269058596280257567 stripped
