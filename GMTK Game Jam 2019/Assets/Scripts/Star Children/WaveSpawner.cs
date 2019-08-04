@@ -169,7 +169,7 @@ public class WaveSpawner : MonoBehaviour
 
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Vector3 screenPoint = mainCamera.WorldToViewportPoint(_sp.position);
-        bool onScreen = screenPoint.z < 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+        bool onScreen = screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
         while (onScreen)
         {
             _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
