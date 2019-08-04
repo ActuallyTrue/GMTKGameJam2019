@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f348a4122d91d4ba4bc9d2881a13b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationLevel: Game Map
+  destinationLevel: Game Map_01
 --- !u!212 &1415271103
 SpriteRenderer:
   m_ObjectHideFlags: 0
