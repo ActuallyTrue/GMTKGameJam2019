@@ -36,9 +36,11 @@ public class SimpleAI2D : Pathfinding2D
             //save distance so we do not have to call it multiple times
             tempDistance = Vector3.Distance(transform.position, Player.position);
 
+            //print("TempDistance: " + tempDistance + " Search Distance: " + SearchDistance);
             //Check if we are able to search
             if (search == true)
             {
+                //print("Search: " + search.ToString());
                 //Start the time
                 StartCoroutine(SearchTimer());
 
@@ -48,6 +50,7 @@ public class SimpleAI2D : Pathfinding2D
                     FindPath(transform.position, Player.position);
                     movementGoal = Player;
                     chasing = true;
+                    //print("chasing");
                 }
                 else
                 {

@@ -35,6 +35,7 @@ public class EnemyBehavior : SimpleAI2D
             if (chasing == false)
             {
                 Wander();
+                //print("wander init");
             }
         }
     }
