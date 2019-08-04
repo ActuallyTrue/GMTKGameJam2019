@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DamageAndHealth : MonoBehaviour
 {
+    private float shakeTimer;
+    private bool animate = false;
+
     public int health;
     public int damage;
     private DamageAndHealth target;
@@ -20,11 +23,16 @@ public class DamageAndHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (animate)
+        {
+            shakeTimer += Time.deltaTime;
+        }
     }
 
     public void TakeDamage(int damage)
     {
+        StartCoroutine(Shake(gameObject));
+        animate = true;
         if (GetComponentInChildren<ParticleSystem>() != null)
         {
             GetComponentInChildren<ParticleSystem>().Play();
@@ -73,5 +81,27 @@ public class DamageAndHealth : MonoBehaviour
         }
     }
 
+    IEnumerator Shake(GameObject character, float animLength = 0.25f, float animPower = 1) //Shake violently, courtesy of project Unleavened
+    {
+        float power = animPower * 5 * Time.deltaTime;
+
+        bool notDone = true;
+        while (notDone)
+        {
+            if ((shakeTimer < (animLength)))
+            {
+                character.transform.Translate(UnityEngine.Random.Range(-power, power), UnityEngine.Random.Range(-power, power), 0);
+                yield return null;
+            }
+            else
+            {
+                //ResetPositions();
+                //end this thread
+                shakeTimer = 0f;
+                notDone = false;
+                //AnimStateReset();
+            }
+        }
+    }
 
 }
