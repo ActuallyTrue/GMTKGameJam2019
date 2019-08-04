@@ -4854,7 +4854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1.2
   firePoint: {fileID: 5624891248631883314}
-  bulletPrefab: {fileID: 3151700966456747746, guid: b8a34185b54bacd419025f3b54f8116b,
+  bulletPrefab: {fileID: 548314857527534283, guid: 4b92217c25abcfb4fbfd4b0a4141d4b0,
     type: 3}
   Player: {fileID: 0}
 --- !u!70 &5624891247559439966
