@@ -7,6 +7,8 @@ public class PlayerMove : MonoBehaviour
 
     public bool InstantMotion = true;
     public float Speed = 5f;
+    private Animator anim;
+    private bool facingRight;
 
     Rigidbody2D rBody;
     // Start is called before the first frame update
@@ -14,12 +16,19 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rBody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
 
+    private void Update()
+    {
+        anim.SetFloat("xVelocity", rBody.velocity.x);
+        anim.SetFloat("yVelocity", rBody.velocity.y);
+
+    }
+
     void FixedUpdate()
     {
-        
         if(InstantMotion)
         {
             InstantMove();
@@ -34,14 +43,14 @@ public class PlayerMove : MonoBehaviour
     //checks input axis and sets a velocity for rBody
     private void InstantMove()
     {
-
-        if (!Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 0) && !Mathf.Approximately(Input.GetAxisRaw("Vertical"), 0))
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (!Mathf.Approximately(input.x, 0) && !Mathf.Approximately(input.y, 0))
         {
             //rBody.velocity = new Vector3(0,0,0);
-            rBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * Speed * 100 * Time.deltaTime, Input.GetAxisRaw("Vertical") * Speed * 100 * Time.deltaTime) * 0.707f;
+            rBody.velocity = new Vector2(input.x * Speed * 100 * Time.deltaTime, input.y * Speed * 100 * Time.deltaTime) * 0.707f;
         }
 
-        else if (!Mathf.Approximately(Input.GetAxisRaw("Horizontal"), 0) || !Mathf.Approximately(Input.GetAxisRaw("Vertical"), 0))
+        else if (!Mathf.Approximately(input.x, 0) || !Mathf.Approximately(input.y, 0))
         {
             //rBody.velocity = new Vector3(0, 0, 0);
             rBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * Speed * 100 * Time.deltaTime, Input.GetAxisRaw("Vertical") * Speed * 100 * Time.deltaTime);
@@ -54,21 +63,22 @@ public class PlayerMove : MonoBehaviour
 
     private void Move()
     {
-
-        if (!Mathf.Approximately(Input.GetAxis("Horizontal"), 0) && !Mathf.Approximately(Input.GetAxis("Vertical"), 0))
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (!Mathf.Approximately(input.x, 0) && !Mathf.Approximately(input.y, 0))
         {
             //rBody.velocity = new Vector3(0,0,0);
-            rBody.velocity = new Vector2(Input.GetAxis("Horizontal") * Speed * 100 * Time.deltaTime, Input.GetAxis("Vertical") * Speed * 100 * Time.deltaTime) * 0.707f;
+            rBody.velocity = new Vector2(input.x * Speed * 100 * Time.deltaTime, input.y * Speed * 100 * Time.deltaTime) * 0.707f;
         }
 
-        else if (!Mathf.Approximately(Input.GetAxis("Horizontal"), 0) || !Mathf.Approximately(Input.GetAxis("Vertical"), 0))
+        else if (!Mathf.Approximately(input.x, 0) || !Mathf.Approximately(input.y, 0))
         {
             //rBody.velocity = new Vector3(0, 0, 0);
-            rBody.velocity = new Vector2(Input.GetAxis("Horizontal") * Speed * 100 * Time.deltaTime, Input.GetAxis("Vertical") * Speed * 100 * Time.deltaTime);
+            rBody.velocity = new Vector2(input.x * Speed * 100 * Time.deltaTime, input.y * Speed * 100 * Time.deltaTime);
         }
         else
         {
             rBody.velocity = new Vector3(0, 0, 0);
         }
     }
+
 }
