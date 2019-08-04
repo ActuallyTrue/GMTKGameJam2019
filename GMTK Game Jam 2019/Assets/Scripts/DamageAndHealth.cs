@@ -25,6 +25,11 @@ public class DamageAndHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (GetComponentInChildren<ParticleSystem>() != null)
+        {
+            GetComponentInChildren<ParticleSystem>().Play();
+            print("Particles!");
+        }
         health -= damage;
         if (health <= 0)
         {

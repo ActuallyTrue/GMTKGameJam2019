@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9084368513548804904}
   - component: {fileID: 9084368513548804948}
   m_Layer: 0
-  m_Name: NavPlane
+  m_Name: NavMeshPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9084368513548804907}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: -0.5}
+  m_LocalRotation: {x: -0.50000006, y: -0.5, z: 0.50000006, w: 0.5}
   m_LocalPosition: {x: -0.39, y: 0.09, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 5.554, y: 2.777, z: 5.554}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 90.00001}
 --- !u!33 &9084368513548804950
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ed15e23f14a096e4aa0b07ce84165908, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,8 +110,8 @@ MonoBehaviour:
   HeuristicAggression: 0
   zStart: -10
   zEnd: 10
-  MapStartPosition: {x: -8, y: -10}
-  MapEndPosition: {x: 13, y: 12}
+  MapStartPosition: {x: -80, y: -100}
+  MapEndPosition: {x: 100, y: 100}
   DisallowedTags:
   - Wall
   IgnoreTags:

@@ -31,6 +31,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Animated Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2922452210860023262, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.007024634
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922452210860023262, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.003921616
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922452210860023262, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5765207
+      objectReference: {fileID: 0}
+    - target: {fileID: 2922452210860023262, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.5472096
+      objectReference: {fileID: 0}
     - target: {fileID: 2922452210860023258, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
       propertyPath: m_Sprite
@@ -40,12 +60,12 @@ PrefabInstance:
     - target: {fileID: 2922452210860023259, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8
+      value: -1.33
       objectReference: {fileID: 0}
     - target: {fileID: 2922452210860023259, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.87
+      value: 4.42
       objectReference: {fileID: 0}
     - target: {fileID: 2922452210860023259, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
@@ -111,6 +131,30 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335843535, guid: 32980967dcef99840838ffee49cede7a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335843535, guid: 32980967dcef99840838ffee49cede7a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335843535, guid: 32980967dcef99840838ffee49cede7a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335843537, guid: 32980967dcef99840838ffee49cede7a, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335843537, guid: 32980967dcef99840838ffee49cede7a, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335843537, guid: 32980967dcef99840838ffee49cede7a, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32980967dcef99840838ffee49cede7a, type: 3}
