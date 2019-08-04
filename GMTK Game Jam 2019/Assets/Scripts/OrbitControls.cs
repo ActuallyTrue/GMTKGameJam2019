@@ -36,26 +36,32 @@ public class OrbitControls : MonoBehaviour
     {
         if (!repeatedFire)
         {
-            if (Bullet.transform.parent != null)
+            if(!Bullet.Equals(null))
             {
-                if (Input.GetAxis("Fire1") != 0)
+                if (Bullet.transform.parent != null)
                 {
-                    Shoot();
-                }
-                if (!audioSource.isPlaying && swingSFX.Length > 0)
-                {
-                    int source = Random.Range(0, swingSFX.Length);
-                    audioSource.pitch = Random.Range(0.8f, 1.2f);
-                    audioSource.PlayOneShot(swingSFX[source]);
+                    if (Input.GetAxis("Fire1") != 0)
+                    {
+                        Shoot();
+                    }
+                    if (!audioSource.isPlaying && swingSFX.Length > 0)
+                    {
+                        int source = Random.Range(0, swingSFX.Length);
+                        audioSource.pitch = Random.Range(0.8f, 1.2f);
+                        audioSource.PlayOneShot(swingSFX[source]);
+                    }
                 }
             }
         }
 
         else
         {
-            if (Input.GetAxis("Fire1") != 0)
+            if (!Bullet.Equals(null))
             {
-                Shoot();
+                if (Input.GetAxis("Fire1") != 0)
+                {
+                    Shoot();
+                }
             }
         }
 
@@ -109,7 +115,10 @@ public class OrbitControls : MonoBehaviour
         {
             GameObject newBullet = Instantiate(BulletPrefab);
             newBullet.transform.position = gameObject.transform.position + new Vector3(5, 5, 0);
+            newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(2, 2);
+            newBullet.GetComponent<Rigidbody2D>().isKinematic = false;
             Bullet = newBullet;
+            BulletRB = newBullet.GetComponent<Rigidbody2D>();
         }
 
         Vector2 direction = gameObject.transform.position - Bullet.transform.position;

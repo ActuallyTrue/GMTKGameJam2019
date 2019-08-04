@@ -4881,7 +4881,7 @@ PrefabInstance:
     - target: {fileID: 2035075008509419157, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
       propertyPath: m_Name
-      value: BulletClone
+      value: PlayerBullet
       objectReference: {fileID: 0}
     - target: {fileID: 2035075008509419163, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
@@ -4941,28 +4941,28 @@ PrefabInstance:
     - target: {fileID: 2035075008509419163, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.10828
+      value: 1.58195
       objectReference: {fileID: 0}
     - target: {fileID: 2035075008509419163, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.10828
+      value: 1.58195
       objectReference: {fileID: 0}
     - target: {fileID: 2035075008509419163, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.10828
+      value: 1.58195
+      objectReference: {fileID: 0}
+    - target: {fileID: 17367561647296566, guid: 090e30dff09a9cb46b9cbe55b3d31357,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2035075008509419160, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: b1d21ec44c5157745ac293251cb52eff, type: 2}
-    - target: {fileID: 17367561647296566, guid: 090e30dff09a9cb46b9cbe55b3d31357,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 090e30dff09a9cb46b9cbe55b3d31357, type: 3}
 --- !u!1 &5674962134473303122 stripped

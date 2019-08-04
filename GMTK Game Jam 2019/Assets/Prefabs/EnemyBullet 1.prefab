@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 548314857527534287}
   - component: {fileID: 548314857527534274}
   - component: {fileID: -8775405634508736182}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: EnemyBullet 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,9 +87,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992c61a0f6898d742b936b8d478d8462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 0
   rBody2D: {fileID: -8775405634508736182}
-  TimeUntilDestroy: 2
+  TimeUntilDestroy: 10
 --- !u!114 &548314857527534275
 MonoBehaviour:
   m_ObjectHideFlags: 0
