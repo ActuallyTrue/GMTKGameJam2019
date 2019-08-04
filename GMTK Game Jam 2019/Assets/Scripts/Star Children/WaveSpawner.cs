@@ -19,6 +19,7 @@ public class WaveSpawner : MonoBehaviour
         public Transform lazyStarChild;
         public Transform angryStarChild;
         public Transform tenaciousStarChild;
+        [HideInInspector]
         public List<Transform> enemyTypes;
         public int count;
         public float spawnRate;
@@ -34,7 +35,7 @@ public class WaveSpawner : MonoBehaviour
 
     public float timeBetweenWaves = 15f;
     Camera mainCamera;
-    public float waveCountdown = 0f;
+    private float waveCountdown = 0f;
 
     private float searchCountdown = 1f;
 

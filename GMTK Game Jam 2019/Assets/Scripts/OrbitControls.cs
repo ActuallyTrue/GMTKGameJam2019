@@ -7,12 +7,12 @@ public class OrbitControls : MonoBehaviour
 
     public bool BulletDefending = true;
     public GameObject Bullet;
+    public GameObject BulletPrefab;
     public float OrbitDistance = 3;
     public float BulletSpeed = 30;
-    private Rigidbody2D BulletRB;
-
     public bool repeatedFire = false;
 
+    private Rigidbody2D BulletRB;
     //sounds
     private AudioSource audioSource;
     public AudioClip fireSFX;
@@ -27,6 +27,8 @@ public class OrbitControls : MonoBehaviour
     {
         BulletRB = Bullet.GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+
+
     }
 
     // Update is called once per frame
@@ -34,26 +36,32 @@ public class OrbitControls : MonoBehaviour
     {
         if (!repeatedFire)
         {
-            if (Bullet.transform.parent != null)
+            if(!Bullet.Equals(null))
             {
-                if (Input.GetAxis("Fire1") != 0)
+                if (Bullet.transform.parent != null)
                 {
-                    Shoot();
-                }
-                if (!audioSource.isPlaying && swingSFX.Length > 0)
-                {
-                    int source = Random.Range(0, swingSFX.Length);
-                    audioSource.pitch = Random.Range(0.8f, 1.2f);
-                    audioSource.PlayOneShot(swingSFX[source]);
+                    if (Input.GetAxis("Fire1") != 0)
+                    {
+                        Shoot();
+                    }
+                    if (!audioSource.isPlaying && swingSFX.Length > 0)
+                    {
+                        int source = Random.Range(0, swingSFX.Length);
+                        audioSource.pitch = Random.Range(0.8f, 1.2f);
+                        audioSource.PlayOneShot(swingSFX[source]);
+                    }
                 }
             }
         }
 
         else
         {
-            if (Input.GetAxis("Fire1") != 0)
+            if (!Bullet.Equals(null))
             {
-                Shoot();
+                if (Input.GetAxis("Fire1") != 0)
+                {
+                    Shoot();
+                }
             }
         }
 
@@ -102,6 +110,17 @@ public class OrbitControls : MonoBehaviour
     //tells the bullet to return to the player and makes it so the bullet is looking for the player to attach.
     private void ReturnProjectile()
     {
+
+        if(Bullet.Equals(null))
+        {
+            GameObject newBullet = Instantiate(BulletPrefab);
+            newBullet.transform.position = gameObject.transform.position + new Vector3(5, 5, 0);
+            newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(2, 2);
+            newBullet.GetComponent<Rigidbody2D>().isKinematic = false;
+            Bullet = newBullet;
+            BulletRB = newBullet.GetComponent<Rigidbody2D>();
+        }
+
         Vector2 direction = gameObject.transform.position - Bullet.transform.position;
         direction.Normalize();
         BulletRB.isKinematic = true;

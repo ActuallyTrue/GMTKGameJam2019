@@ -14,6 +14,7 @@ public class DamageAndHealth : MonoBehaviour
     public bool canDealDamage;
     public LayerMask whatCanDamageYou;
     public LayerMask whatYouCanDamage;
+    public GameObject DeathAnimation;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +48,11 @@ public class DamageAndHealth : MonoBehaviour
 
     public void Die()
     {
+        if(!DeathAnimation.Equals(null))
+        {
+            Instantiate(DeathAnimation, transform.position, Quaternion.identity);
+        }
+
         Destroy(gameObject);
     }
 
