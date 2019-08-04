@@ -94,7 +94,7 @@ public class SpecialEffects : MonoBehaviour
         {
             transform.Rotate(new Vector3(Time.deltaTime * 0, 0, 5));
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 }

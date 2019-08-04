@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 5624891247559439955}
   - component: {fileID: 3703117125682443986}
   m_Layer: 10
-  m_Name: Lazy Starchild
-  m_TagString: Untagged
+  m_Name: BaseStarchild
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5624891247559439965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.48, y: 1.28, z: 0}
-  m_LocalScale: {x: 6.8853335, y: 6.8853335, z: 6.8853335}
+  m_LocalScale: {x: 3.6240954, y: 3.6240954, z: 3.6240954}
   m_Children:
   - {fileID: 5624891248631883314}
   m_Father: {fileID: 0}
@@ -159,6 +159,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   SearchDistance: 25
   Speed: 2
+  ArrivedThreshold: 3
   fireRange: 15
   wanderDistance: 15
   wanderArriveThreshold: 1
