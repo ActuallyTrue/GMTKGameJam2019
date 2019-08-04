@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class SimpleAI2D : Pathfinding2D 
 {
@@ -11,9 +12,12 @@ public class SimpleAI2D : Pathfinding2D
     private bool search = true;
     protected bool chasing = false;
     protected float tempDistance = 0F;
+    protected Transform movementGoal;
 
-	protected void Start () 
+
+    protected void Start () 
     {
+        movementGoal = Player;
         //Make sure that we dont dividde by 0 in our search timer coroutine
         if (SearchPerSecond == 0)
             SearchPerSecond = 1;
@@ -41,6 +45,7 @@ public class SimpleAI2D : Pathfinding2D
                 if (tempDistance < SearchDistance)
                 {
                     FindPath(transform.position, Player.position);
+                    movementGoal = Player;
                     chasing = true;
                 }
                 else
@@ -69,16 +74,17 @@ public class SimpleAI2D : Pathfinding2D
         search = true;
     }
 
-    private void MoveAI()
+    protected void MoveAI()
     {
         //Make sure we are within distance + 1 added so we dont get stuck at exactly the search distance
-        if (tempDistance < SearchDistance + 1)
+        //if (tempDistance < SearchDistance + 1f)
+        if (Path.Count > 0)
         {       
             //if we get close enough or we are closer then the indexed position, then remove the position from our path list, 
-            if (Vector3.Distance(transform.position, Path[0]) < 0.2F || tempDistance < Vector3.Distance(Path[0], Player.position)) 
+            if (Vector3.Distance(transform.position, Path[0]) < 0.2F || tempDistance < Vector3.Distance(Path[0], movementGoal.position)) 
             {
                 Path.RemoveAt(0);
-            }   
+            }
 
             if(Path.Count < 1)
                 return;
@@ -87,7 +93,8 @@ public class SimpleAI2D : Pathfinding2D
             Vector3 ignoreZ = new Vector3(Path[0].x, Path[0].y, transform.position.z);
             
             //now move towards the newly created position
-            transform.position = Vector3.MoveTowards(transform.position, ignoreZ, Time.deltaTime * Speed);  
+            transform.position = Vector3.MoveTowards(transform.position, ignoreZ, Time.deltaTime * Speed);
+           // print("moving");
         }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3919458885223423987}
   - component: {fileID: 2922452209810109343}
   - component: {fileID: 2922452209810109312}
+  - component: {fileID: 1148885801}
   m_Layer: 0
   m_Name: Orbitter
   m_TagString: Orbitter
@@ -60,11 +61,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2299ddfc3c9149946956b91450a375ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Orbitter: {fileID: 2922452209810109340}
+  BulletDefending: 1
   Bullet: {fileID: 90816851315066921}
   OrbitDistance: 3
   BulletSpeed: 30
   repeatedFire: 0
+  fireSFX: {fileID: 8300000, guid: bad68c786f8abcd4aa3534e1a55d0ed2, type: 3}
+  swingSFX:
+  - {fileID: 8300000, guid: 30a8479b01d27a94b90ee768c5fd0e94, type: 3}
+  - {fileID: 8300000, guid: 16def2b32f4ce084988ad90f4e273661, type: 3}
 --- !u!50 &2922452209810109343
 Rigidbody2D:
   serializedVersion: 4
@@ -135,6 +140,102 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1148885801
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922452209810109340}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bad68c786f8abcd4aa3534e1a55d0ed2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2922452210860023257
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,10 +334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InstantMotion: 1
   Speed: 5
-  Orbitter: {fileID: 2922452209810109340}
+  Orbitter: {fileID: 0}
   Bullet: {fileID: 90816851315066921}
-  OrbitDistance: 3
-  BulletSpeed: 30
   bulletCollisionMask:
     serializedVersion: 2
     m_Bits: 0
@@ -286,11 +385,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2922452209810109341}
     m_Modifications:
-    - target: {fileID: 2035075008509419157, guid: 090e30dff09a9cb46b9cbe55b3d31357,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerBullet
-      objectReference: {fileID: 0}
     - target: {fileID: 2035075008509419163, guid: 090e30dff09a9cb46b9cbe55b3d31357,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -345,6 +439,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035075008509419157, guid: 090e30dff09a9cb46b9cbe55b3d31357,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerBullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 090e30dff09a9cb46b9cbe55b3d31357, type: 3}
