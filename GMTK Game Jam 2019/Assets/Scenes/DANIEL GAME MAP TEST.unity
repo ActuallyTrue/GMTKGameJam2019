@@ -744,7 +744,7 @@ PrefabInstance:
     - target: {fileID: 3095210880392312255, guid: 26f9b003731214b468f06a701b99abef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.05
+      value: -0.38
       objectReference: {fileID: 0}
     - target: {fileID: 3095210880392312255, guid: 26f9b003731214b468f06a701b99abef,
         type: 3}
@@ -1589,7 +1589,6 @@ MonoBehaviour:
   - {fileID: 333378682}
   - {fileID: 108205906}
   timeBetweenWaves: 1
-  waveCountdown: 0
   state: 2
 --- !u!4 &1081434727
 Transform:
