@@ -1,16 +1,16 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &7369699996775558627
+--- !u!95 &3387780664770042174
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3095210880392312243}
+  m_GameObject: {fileID: 4085542820671406237}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 12420e29adf4bb547a8d68b1594699d7, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -19,7 +19,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &7276626416258434030
+--- !u!1001 &8556104016054957760
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -29,17 +29,17 @@ PrefabInstance:
     - target: {fileID: 5624891247559439965, guid: 7a354085fcc65e54b913dcd41175b277,
         type: 3}
       propertyPath: m_Name
-      value: MeleeStarChild Variant - Final
+      value: LazyStarChild
       objectReference: {fileID: 0}
     - target: {fileID: 5624891247559439953, guid: 7a354085fcc65e54b913dcd41175b277,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.535669
+      value: -5.48
       objectReference: {fileID: 0}
     - target: {fileID: 5624891247559439953, guid: 7a354085fcc65e54b913dcd41175b277,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.704536
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: 5624891247559439953, guid: 7a354085fcc65e54b913dcd41175b277,
         type: 3}
@@ -86,92 +86,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5624891247559439953, guid: 7a354085fcc65e54b913dcd41175b277,
+    - target: {fileID: 5624891247559439955, guid: 7a354085fcc65e54b913dcd41175b277,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1236145
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624891247559439953, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1236145
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624891247559439953, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.1236145
+      propertyPath: JS
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5624891247559439955, guid: 7a354085fcc65e54b913dcd41175b277,
         type: 3}
-      propertyPath: ArrivedThreshold
+      propertyPath: SearchPerSecond
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5624891247559439955, guid: 7a354085fcc65e54b913dcd41175b277,
         type: 3}
       propertyPath: Speed
-      value: 4
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624891247559439955, guid: 7a354085fcc65e54b913dcd41175b277,
+        type: 3}
+      propertyPath: ArrivedThreshold
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5624891247559439955, guid: 7a354085fcc65e54b913dcd41175b277,
         type: 3}
       propertyPath: fireRange
-      value: 1.2
+      value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 5624891247559439954, guid: 7a354085fcc65e54b913dcd41175b277,
+    - target: {fileID: 5624891247559439967, guid: 7a354085fcc65e54b913dcd41175b277,
         type: 3}
-      propertyPath: health
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624891247559439952, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 42719a94e9b98cc4e96392c2b2e37af0,
-        type: 3}
-    - target: {fileID: 5624891247559439966, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.028092118
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624891247559439966, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.20152496
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624891247559439966, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.56238896
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624891247559439966, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.7555458
-      objectReference: {fileID: 0}
-    - target: {fileID: 3703117125682443986, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.019689435
-      objectReference: {fileID: 0}
-    - target: {fileID: 3703117125682443986, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.21647961
-      objectReference: {fileID: 0}
-    - target: {fileID: 3703117125682443986, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.29755
-      objectReference: {fileID: 0}
-    - target: {fileID: 3703117125682443986, guid: 7a354085fcc65e54b913dcd41175b277,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.42131853
+      propertyPath: fireRate
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a354085fcc65e54b913dcd41175b277, type: 3}
---- !u!1 &3095210880392312243 stripped
+--- !u!1 &4085542820671406237 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5624891247559439965, guid: 7a354085fcc65e54b913dcd41175b277,
     type: 3}
-  m_PrefabInstance: {fileID: 7276626416258434030}
+  m_PrefabInstance: {fileID: 8556104016054957760}
   m_PrefabAsset: {fileID: 0}
