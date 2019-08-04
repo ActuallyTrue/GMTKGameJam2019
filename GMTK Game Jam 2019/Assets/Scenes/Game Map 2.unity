@@ -459,12 +459,6 @@ Transform:
   m_Father: {fileID: 1081434727}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &407343716 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4269058596280257565, guid: 3cef0b8f6a91ba54585566a1151eb5f0,
-    type: 3}
-  m_PrefabInstance: {fileID: 81002593}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &436822297
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +613,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316a9b48122dcc348a9a0b425dd96ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Game Map 2
   waves:
   - name: Wave 1
     normalStarChild: {fileID: 0}
@@ -629,17 +622,7 @@ MonoBehaviour:
     angryStarChild: {fileID: 0}
     tenaciousStarChild: {fileID: 0}
     enemyTypes: []
-    count: 3
-    spawnRate: 1
-  - name: Wave 1
-    normalStarChild: {fileID: 0}
-    toughStarChild: {fileID: 0}
-    lazyStarChild: {fileID: 5624891247559439953, guid: 7a354085fcc65e54b913dcd41175b277,
-      type: 3}
-    angryStarChild: {fileID: 0}
-    tenaciousStarChild: {fileID: 0}
-    enemyTypes: []
-    count: 3
+    count: 500
     spawnRate: 1
   spawnPoints:
   - {fileID: 436822298}
@@ -771,7 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92fd3e40d5258f48a652125b7d29a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 407343716}
+  target: {fileID: 0}
   smoothSpeed: 0.125
 --- !u!1001 &1368510838
 PrefabInstance:
