@@ -16,6 +16,7 @@ public class OrbitControls : MonoBehaviour
     //sounds
     private AudioSource audioSource;
     public AudioClip fireSFX;
+    public AudioClip returnSFX;
     public AudioClip[] swingSFX;
 
 
@@ -39,7 +40,7 @@ public class OrbitControls : MonoBehaviour
                 {
                     Shoot();
                 }
-                if (!audioSource.isPlaying)
+                if (!audioSource.isPlaying && swingSFX.Length > 0)
                 {
                     int source = Random.Range(0, swingSFX.Length);
                     audioSource.pitch = Random.Range(0.8f, 1.2f);
@@ -106,5 +107,10 @@ public class OrbitControls : MonoBehaviour
         BulletRB.isKinematic = true;
         BulletRB.velocity = direction * BulletSpeed;
         LookingForPlayer = true;
+        if (!audioSource.isPlaying)
+        {
+            audioSource.pitch = 1.0f;
+            audioSource.PlayOneShot(returnSFX);
+        }
     }
 }

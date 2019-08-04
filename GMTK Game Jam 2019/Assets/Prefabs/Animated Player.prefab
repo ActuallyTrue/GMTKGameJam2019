@@ -149,6 +149,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 1148885801, guid: 32980967dcef99840838ffee49cede7a, type: 3}
+      propertyPath: m_Volume
+      value: 0.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3919458885223423987, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: fireSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 658264a114cb01e448d7012552da41ee, type: 3}
+    - target: {fileID: 3919458885223423987, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: returnSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: ee1e5e11200ce8445a99ff6c71321324, type: 3}
+    - target: {fileID: 3919458885223423987, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: swingSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1647ef90da83c2044bac7a61f3b9fa8a, type: 3}
     - target: {fileID: 2922452209810109312, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
       propertyPath: m_SortingOrder

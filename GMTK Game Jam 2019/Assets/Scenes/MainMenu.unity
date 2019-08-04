@@ -627,6 +627,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2725992749877464629, guid: 3cef0b8f6a91ba54585566a1151eb5f0,
+        type: 3}
+      propertyPath: swingSFX.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725992749877464629, guid: 3cef0b8f6a91ba54585566a1151eb5f0,
+        type: 3}
+      propertyPath: swingSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d5ee0ba012bef39469be356121db8897, type: 3}
+    - target: {fileID: 1418665638766545647, guid: 3cef0b8f6a91ba54585566a1151eb5f0,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.886
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cef0b8f6a91ba54585566a1151eb5f0, type: 3}
 --- !u!1 &1065420604
