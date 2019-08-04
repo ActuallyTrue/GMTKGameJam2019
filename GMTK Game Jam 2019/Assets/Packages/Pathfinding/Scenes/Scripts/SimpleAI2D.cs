@@ -8,6 +8,7 @@ public class SimpleAI2D : Pathfinding2D
     public Transform Player;
     public float SearchDistance = 10f;
     public float Speed = 2f;
+    public int ArrivedThreshold = 3;
 
     private bool search = true;
     protected bool chasing = false;
@@ -86,7 +87,7 @@ public class SimpleAI2D : Pathfinding2D
                 Path.RemoveAt(0);
             }
 
-            if(Path.Count < 1)
+            if(Path.Count < ArrivedThreshold)
                 return;
 
             //First we will create a new vector ignoreing the depth (z-axiz).
