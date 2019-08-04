@@ -99,7 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1
   firePoint: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 3151700966456747746, guid: b8a34185b54bacd419025f3b54f8116b,
+    type: 3}
   Player: {fileID: 0}
 --- !u!114 &7939221285387339081
 MonoBehaviour:
