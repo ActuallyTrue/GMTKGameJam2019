@@ -26,7 +26,7 @@ public class LazyStarChild : MonoBehaviour
     {
         enemyBehavior = GetComponent<EnemyBehavior>();
         fireTimer = fireRate;
-        if(Player.Equals(null))
+        if(Player == null)
         {
             Player = GameObject.FindWithTag("Player");
         }
