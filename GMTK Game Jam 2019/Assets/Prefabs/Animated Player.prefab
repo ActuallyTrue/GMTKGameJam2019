@@ -106,6 +106,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -6.44
       objectReference: {fileID: 0}
+    - target: {fileID: 565372026, guid: 32980967dcef99840838ffee49cede7a, type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e51023d09836c4d4da127d734117ceaf, type: 3}
     - target: {fileID: 2922452210860023262, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
       propertyPath: m_Offset.x

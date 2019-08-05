@@ -4897,6 +4897,7 @@ MonoBehaviour:
     m_Bits: 512
   DeathAnimation: {fileID: 8498254954830911617, guid: 9f95f30681d1a5f46a4384cb3bcc36c0,
     type: 3}
+  audioClip: {fileID: 8300000, guid: e51023d09836c4d4da127d734117ceaf, type: 3}
 --- !u!114 &5624891247559439955
 MonoBehaviour:
   m_ObjectHideFlags: 0

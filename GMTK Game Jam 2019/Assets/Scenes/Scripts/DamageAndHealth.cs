@@ -15,10 +15,18 @@ public class DamageAndHealth : MonoBehaviour
     public LayerMask whatCanDamageYou;
     public LayerMask whatYouCanDamage;
     public GameObject DeathAnimation;
+
+    public AudioClip audioClip;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponentInChildren<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = GetComponentInParent<AudioSource>();
+        }
+
     }
 
     // Update is called once per frame
@@ -38,6 +46,11 @@ public class DamageAndHealth : MonoBehaviour
         {
             GetComponentInChildren<ParticleSystem>().Play();
             print("Particles!");
+        }
+        if (audioSource != null
+            && audioClip != null)
+        {
+            audioSource.PlayOneShot(audioClip);
         }
         health -= damage;
         if (health <= 0)
