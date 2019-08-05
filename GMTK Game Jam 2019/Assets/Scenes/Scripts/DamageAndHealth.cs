@@ -48,7 +48,7 @@ public class DamageAndHealth : MonoBehaviour
 
     public void Die()
     {
-        if(!DeathAnimation.Equals(null))
+        if(DeathAnimation != null)
         {
             Instantiate(DeathAnimation, transform.position, Quaternion.identity);
         }
