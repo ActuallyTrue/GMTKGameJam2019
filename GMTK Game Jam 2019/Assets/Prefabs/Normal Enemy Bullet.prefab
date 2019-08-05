@@ -4828,6 +4828,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   DeathAnimation: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!114 &6166127852078109334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4855,7 +4856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a81201a8d3ecaa42bbf8c556d8b70d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 5
+  time: 10
 --- !u!212 &5272435646146763158
 SpriteRenderer:
   m_ObjectHideFlags: 0

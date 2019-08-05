@@ -82,7 +82,7 @@ public class SimpleAI2D : Pathfinding2D
     {
         //Make sure we are within distance + 1 added so we dont get stuck at exactly the search distance
         //if (tempDistance < SearchDistance + 1f)
-        if (Path.Count > 0)
+        if (Path.Count > 0 && movementGoal != null)
         {       
             //if we get close enough or we are closer then the indexed position, then remove the position from our path list, 
             if (Vector3.Distance(transform.position, Path[0]) < 0.2F || tempDistance < Vector3.Distance(Path[0], movementGoal.position)) 
