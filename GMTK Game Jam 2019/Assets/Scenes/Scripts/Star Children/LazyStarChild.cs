@@ -41,7 +41,7 @@ public class LazyStarChild : MonoBehaviour
         currentPos = new Vector2(transform.position.x, transform.position.y);
         xVelocity = currentPos.x - lastPos.x;
         yVelocity = currentPos.y - lastPos.y;
-        Debug.Log(xVelocity);
+        //Debug.Log(xVelocity);
         anim.SetFloat("xVelocity", xVelocity);
         anim.SetFloat("yVelocity", yVelocity);
 
