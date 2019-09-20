@@ -7,8 +7,12 @@ public class DamageAndHealth : MonoBehaviour
     private float shakeTimer;
     private bool animate = false;
 
-    public int health;
+    [SerializeField]
+    private int health;
     public int damage;
+    [SerializeField]
+    private float invincibleTime = 1;
+    private float invincibleTimer; 
     private DamageAndHealth target;
     public bool canTakeDamage;
     public bool canDealDamage;
@@ -26,7 +30,7 @@ public class DamageAndHealth : MonoBehaviour
         {
             audioSource = GetComponentInParent<AudioSource>();
         }
-
+        invincibleTime = invincibleTimer;
     }
 
     // Update is called once per frame
@@ -35,6 +39,10 @@ public class DamageAndHealth : MonoBehaviour
         if (animate)
         {
             shakeTimer += Time.deltaTime;
+        }
+        if(invincibleTime > 0)
+        {
+            invincibleTime -= Time.deltaTime;
         }
     }
 
@@ -72,9 +80,26 @@ public class DamageAndHealth : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
  
-        if (canDealDamage)
+        if (canDealDamage && invincibleTime <= 0)
         {
             target = collision.gameObject.GetComponent<DamageAndHealth>();
+            if ((whatYouCanDamage == (whatYouCanDamage | (1 << collision.gameObject.layer))) && target.canTakeDamage) //Daniel took the first part of this conditional off of the internet and doesn't know how it works
+            {
+                Debug.Log("Damage Taken!");
+                target.TakeDamage(damage);
+                invincibleTime = invincibleTimer;
+            }
+
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Damage");
+        if (canDealDamage && invincibleTime <= 0)
+        {
+            target = collision.gameObject.GetComponent<DamageAndHealth>();
+
             if ((whatYouCanDamage == (whatYouCanDamage | (1 << collision.gameObject.layer))) && target.canTakeDamage) //Daniel took the first part of this conditional off of the internet and doesn't know how it works
             {
                 Debug.Log("Damage Taken!");
@@ -84,19 +109,15 @@ public class DamageAndHealth : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void addHealth(int health)
     {
-        Debug.Log("Damage");
-        if (canDealDamage)
+        if((this.health + health) > 10)
         {
-            target = collision.gameObject.GetComponent<DamageAndHealth>();
-
-            if ((whatYouCanDamage == (whatYouCanDamage | (1 << collision.gameObject.layer))) && target.canTakeDamage) //Daniel took the first part of this conditional off of the internet and doesn't know how it works
-            {
-                Debug.Log("Damage Taken!");
-                target.TakeDamage(damage);
-            }
-
+            this.health = 10;
+        }
+        else
+        {
+            this.health += health;
         }
     }
 

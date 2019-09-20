@@ -2026,43 +2026,46 @@ MonoBehaviour:
   waves:
   - name: Wave 1
     normalStarChild: {fileID: 0}
-    toughStarChild: {fileID: 3974324337621094390, guid: b9fa85a428deb6444834faa515bb43d8,
-      type: 3}
+    toughStarChild: {fileID: 0}
     lazyStarChild: {fileID: 0}
-    angryStarChild: {fileID: 3095210880392312255, guid: 9c7dc3f52bc7325448aee9e6bf7140d6,
+    angryStarChild: {fileID: 1985910847260335313, guid: 342da2a6c33e4874daf9764713e07400,
       type: 3}
-    tenaciousStarChild: {fileID: 0}
+    tenaciousStarChild: {fileID: 1227690799846160197, guid: 182b0abe542afdf46b2bca56b89d0257,
+      type: 3}
     enemyTypes:
     - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
-    count: 4
-    spawnRate: 1
+    count: 30
+    spawnRate: 0.2
   - name: Wave 2
     normalStarChild: {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37,
       type: 3}
-    toughStarChild: {fileID: 3974324337621094390, guid: b9fa85a428deb6444834faa515bb43d8,
+    toughStarChild: {fileID: 1227690799846160197, guid: b596d5fab4df8744eb601f736dc1cb54,
       type: 3}
     lazyStarChild: {fileID: 4085542820671406225, guid: 9f15449d2fed4f6469920764aba86373,
       type: 3}
-    angryStarChild: {fileID: 3095210880392312255, guid: 9c7dc3f52bc7325448aee9e6bf7140d6,
+    angryStarChild: {fileID: 1985910847260335313, guid: 342da2a6c33e4874daf9764713e07400,
       type: 3}
-    tenaciousStarChild: {fileID: 0}
+    tenaciousStarChild: {fileID: 1227690799846160197, guid: 182b0abe542afdf46b2bca56b89d0257,
+      type: 3}
     enemyTypes:
     - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
-    count: 6
-    spawnRate: 2
+    count: 35
+    spawnRate: 0.2
   - name: Wave 3
-    normalStarChild: {fileID: 0}
+    normalStarChild: {fileID: 1227690799846160197, guid: 834e86ff8c4fe2747a8e4a1872d16510,
+      type: 3}
     toughStarChild: {fileID: 3974324337621094390, guid: b9fa85a428deb6444834faa515bb43d8,
       type: 3}
     lazyStarChild: {fileID: 4085542820671406225, guid: 9f15449d2fed4f6469920764aba86373,
       type: 3}
     angryStarChild: {fileID: 3095210880392312255, guid: 9c7dc3f52bc7325448aee9e6bf7140d6,
       type: 3}
-    tenaciousStarChild: {fileID: 0}
+    tenaciousStarChild: {fileID: 1227690799846160197, guid: 182b0abe542afdf46b2bca56b89d0257,
+      type: 3}
     enemyTypes:
     - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
-    count: 12
-    spawnRate: 3
+    count: 40
+    spawnRate: 0.1
   spawnPoints:
   - {fileID: 436822298}
   - {fileID: 1812938889}

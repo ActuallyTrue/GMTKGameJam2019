@@ -32,6 +32,8 @@ public class WaveSpawner : MonoBehaviour
     private int nextWave = 0;
 
     public Transform[] spawnPoints;
+    private GameObject Player;
+    private DamageAndHealth playerHealth;
 
     public float timeBetweenWaves = 15f;
     Camera mainCamera;
@@ -46,6 +48,8 @@ public class WaveSpawner : MonoBehaviour
     {
         waveCountdown = timeBetweenWaves;
         mainCamera = Camera.main;
+        Player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = Player.GetComponent<DamageAndHealth>();
     }
 
     private void Update()
@@ -85,6 +89,7 @@ public class WaveSpawner : MonoBehaviour
     void RoundStart()
     {
         Debug.Log("Wave Completed");
+        playerHealth.addHealth(5);
 
         state = SpawnState.counting;
         waveCountdown = timeBetweenWaves;

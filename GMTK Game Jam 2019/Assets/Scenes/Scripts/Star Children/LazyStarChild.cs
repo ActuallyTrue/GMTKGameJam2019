@@ -28,7 +28,7 @@ public class LazyStarChild : MonoBehaviour
         fireTimer = fireRate;
         if(Player == null)
         {
-            Player = GameObject.FindWithTag("Player");
+            Player = GameObject.FindGameObjectWithTag("Player");
         }
         currentPos = new Vector2(transform.position.x, transform.position.y);
         anim = GetComponent<Animator>();
