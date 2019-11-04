@@ -109,7 +109,7 @@ PrefabInstance:
     - target: {fileID: 565372026, guid: 32980967dcef99840838ffee49cede7a, type: 3}
       propertyPath: audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: e51023d09836c4d4da127d734117ceaf, type: 3}
+      objectReference: {fileID: 8300000, guid: ec9d2805ddc3c404e972caa25c6d8b95, type: 3}
     - target: {fileID: 2922452210860023262, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
       propertyPath: m_Offset.x
@@ -210,6 +210,16 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 90816851315066916, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0041671945
+      objectReference: {fileID: 0}
+    - target: {fileID: 90816851315066916, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.1421039
+      objectReference: {fileID: 0}
     - target: {fileID: 90816851315066920, guid: 32980967dcef99840838ffee49cede7a,
         type: 3}
       propertyPath: m_SortingOrder
@@ -218,6 +228,11 @@ PrefabInstance:
     - target: {fileID: 1168036933, guid: 32980967dcef99840838ffee49cede7a, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975963529509758131, guid: 32980967dcef99840838ffee49cede7a,
+        type: 3}
+      propertyPath: whatYouCanDamage.m_Bits
+      value: 5120
       objectReference: {fileID: 0}
     - target: {fileID: 1335843536, guid: 32980967dcef99840838ffee49cede7a, type: 3}
       propertyPath: m_SortingOrder

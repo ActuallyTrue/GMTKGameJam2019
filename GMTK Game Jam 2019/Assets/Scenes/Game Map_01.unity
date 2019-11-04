@@ -1270,6 +1270,130 @@ Transform:
   m_Father: {fileID: 1935835599}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &861857105
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 961738231038803476, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738229915614797, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1081434725}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c52eb9dbf863a5d42a57e1358eb36436, type: 3}
 --- !u!1001 &900480694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1591,19 +1715,18 @@ MonoBehaviour:
     tenaciousStarChild: {fileID: 0}
     enemyTypes:
     - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
-    count: 15
+    count: 3
     spawnRate: 0.5
   - name: Wave 2
     normalStarChild: {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37,
       type: 3}
     toughStarChild: {fileID: 0}
-    lazyStarChild: {fileID: 6413099051366241921, guid: 902027e3f67546045b1bc8af5a1e1735,
-      type: 3}
+    lazyStarChild: {fileID: 0}
     angryStarChild: {fileID: 0}
     tenaciousStarChild: {fileID: 0}
     enemyTypes:
     - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
-    count: 20
+    count: 10
     spawnRate: 0.5
   - name: Wave 3
     normalStarChild: {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37,
@@ -1615,7 +1738,19 @@ MonoBehaviour:
     tenaciousStarChild: {fileID: 0}
     enemyTypes:
     - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
-    count: 25
+    count: 8
+    spawnRate: 0.5
+  - name: Wave 4
+    normalStarChild: {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37,
+      type: 3}
+    toughStarChild: {fileID: 0}
+    lazyStarChild: {fileID: 6413099051366241921, guid: 902027e3f67546045b1bc8af5a1e1735,
+      type: 3}
+    angryStarChild: {fileID: 0}
+    tenaciousStarChild: {fileID: 0}
+    enemyTypes:
+    - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
+    count: 12
     spawnRate: 0.5
   spawnPoints:
   - {fileID: 436822298}
@@ -1628,6 +1763,11 @@ MonoBehaviour:
   - {fileID: 108205906}
   timeBetweenWaves: 3
   state: 2
+  WaveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &1081434727
 Transform:
   m_ObjectHideFlags: 0

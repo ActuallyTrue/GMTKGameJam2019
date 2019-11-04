@@ -4885,8 +4885,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641fcfbfb1bba324ab11d40d7078384a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   health: 2
   damage: 1
+  invincibleTime: 1
   canTakeDamage: 1
   canDealDamage: 1
   whatCanDamageYou:

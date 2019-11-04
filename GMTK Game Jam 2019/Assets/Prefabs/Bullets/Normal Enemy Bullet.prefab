@@ -4769,7 +4769,7 @@ GameObject:
   - component: {fileID: 5272435646146763158}
   - component: {fileID: 5272435646146763160}
   - component: {fileID: 5224186759989232144}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Normal Enemy Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4819,11 +4819,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   damage: 1
+  invincibleTime: 0
   canTakeDamage: 1
   canDealDamage: 1
   whatCanDamageYou:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 2816
   whatYouCanDamage:
     serializedVersion: 2
     m_Bits: 512

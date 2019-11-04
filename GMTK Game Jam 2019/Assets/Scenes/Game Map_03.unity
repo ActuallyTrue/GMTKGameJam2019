@@ -619,6 +619,130 @@ Transform:
   m_Father: {fileID: 1935835599}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &277750127
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 961738231038803476, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_Name
+      value: HUDCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738231038803472, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 961738229915614797, guid: c52eb9dbf863a5d42a57e1358eb36436,
+        type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 1081434725}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c52eb9dbf863a5d42a57e1358eb36436, type: 3}
 --- !u!4 &291256014 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4363491019002208132, guid: 002db75906c36a342a2e20197ea63c0f,
@@ -2024,9 +2148,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevel: CreditsRoom
   waves:
-  - name: Wave 1
+  - name: Wave 8
     normalStarChild: {fileID: 0}
     toughStarChild: {fileID: 0}
+    lazyStarChild: {fileID: 0}
+    angryStarChild: {fileID: 1985910847260335313, guid: 342da2a6c33e4874daf9764713e07400,
+      type: 3}
+    tenaciousStarChild: {fileID: 0}
+    enemyTypes:
+    - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
+    count: 16
+    spawnRate: 1.2
+  - name: Wave 9
+    normalStarChild: {fileID: 1227690799846160197, guid: 834e86ff8c4fe2747a8e4a1872d16510,
+      type: 3}
+    toughStarChild: {fileID: 1227690799846160197, guid: b596d5fab4df8744eb601f736dc1cb54,
+      type: 3}
+    lazyStarChild: {fileID: 6413099051366241921, guid: 902027e3f67546045b1bc8af5a1e1735,
+      type: 3}
+    angryStarChild: {fileID: 1985910847260335313, guid: 342da2a6c33e4874daf9764713e07400,
+      type: 3}
+    tenaciousStarChild: {fileID: 1227690799846160197, guid: 182b0abe542afdf46b2bca56b89d0257,
+      type: 3}
+    enemyTypes:
+    - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
+    count: 10
+    spawnRate: 1
+  - name: Wave 10
+    normalStarChild: {fileID: 0}
+    toughStarChild: {fileID: 1227690799846160197, guid: b596d5fab4df8744eb601f736dc1cb54,
+      type: 3}
     lazyStarChild: {fileID: 0}
     angryStarChild: {fileID: 1985910847260335313, guid: 342da2a6c33e4874daf9764713e07400,
       type: 3}
@@ -2034,38 +2185,8 @@ MonoBehaviour:
       type: 3}
     enemyTypes:
     - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
-    count: 30
-    spawnRate: 0.2
-  - name: Wave 2
-    normalStarChild: {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37,
-      type: 3}
-    toughStarChild: {fileID: 1227690799846160197, guid: b596d5fab4df8744eb601f736dc1cb54,
-      type: 3}
-    lazyStarChild: {fileID: 4085542820671406225, guid: 9f15449d2fed4f6469920764aba86373,
-      type: 3}
-    angryStarChild: {fileID: 1985910847260335313, guid: 342da2a6c33e4874daf9764713e07400,
-      type: 3}
-    tenaciousStarChild: {fileID: 1227690799846160197, guid: 182b0abe542afdf46b2bca56b89d0257,
-      type: 3}
-    enemyTypes:
-    - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
-    count: 35
-    spawnRate: 0.2
-  - name: Wave 3
-    normalStarChild: {fileID: 1227690799846160197, guid: 834e86ff8c4fe2747a8e4a1872d16510,
-      type: 3}
-    toughStarChild: {fileID: 3974324337621094390, guid: b9fa85a428deb6444834faa515bb43d8,
-      type: 3}
-    lazyStarChild: {fileID: 4085542820671406225, guid: 9f15449d2fed4f6469920764aba86373,
-      type: 3}
-    angryStarChild: {fileID: 3095210880392312255, guid: 9c7dc3f52bc7325448aee9e6bf7140d6,
-      type: 3}
-    tenaciousStarChild: {fileID: 1227690799846160197, guid: 182b0abe542afdf46b2bca56b89d0257,
-      type: 3}
-    enemyTypes:
-    - {fileID: 392062893666403349, guid: dfc7188933a34f9479849f6ed019ef37, type: 3}
-    count: 40
-    spawnRate: 0.1
+    count: 14
+    spawnRate: 0.8
   spawnPoints:
   - {fileID: 436822298}
   - {fileID: 1812938889}
@@ -2077,6 +2198,11 @@ MonoBehaviour:
   - {fileID: 108205906}
   timeBetweenWaves: 3
   state: 2
+  WaveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &1081434727
 Transform:
   m_ObjectHideFlags: 0

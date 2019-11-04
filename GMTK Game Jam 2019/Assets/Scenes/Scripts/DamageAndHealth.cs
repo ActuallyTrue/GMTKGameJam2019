@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DamageAndHealth : MonoBehaviour
 {
     private float shakeTimer;
     private bool animate = false;
+    public UnityEvent DamageEvent;
 
     [SerializeField]
     private int health;
     public int damage;
     [SerializeField]
     private float invincibleTime = 1;
-    private float invincibleTimer; 
+    private float invincibleTimer = 0; 
     private DamageAndHealth target;
     public bool canTakeDamage;
     public bool canDealDamage;
@@ -22,13 +24,29 @@ public class DamageAndHealth : MonoBehaviour
 
     public AudioClip audioClip;
     private AudioSource audioSource;
+
+    public int GetHealth { get => health; }
+
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponentInChildren<AudioSource>();
-        if (audioSource == null)
+        if (DamageEvent == null)
         {
-            audioSource = GetComponentInParent<AudioSource>();
+            DamageEvent = new UnityEvent();
+        }
+        if (audioClip != null)
+        {
+            audioSource = GetComponentInChildren<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = GetComponentInParent<AudioSource>();
+                if (audioSource == null)
+                {
+                    audioSource = gameObject.AddComponent<AudioSource>();
+                    audioSource.volume = 0.4f;
+                    //this should probably not be hardcoded, but this script is used for enemies rn:
+                }
+            }
         }
         invincibleTime = invincibleTimer;
     }
@@ -48,19 +66,25 @@ public class DamageAndHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
         StartCoroutine(Shake(gameObject));
         animate = true;
         if (GetComponentInChildren<ParticleSystem>() != null)
         {
             GetComponentInChildren<ParticleSystem>().Play();
-            print("Particles!");
+            //print("Particles!");
         }
         if (audioSource != null
             && audioClip != null)
         {
             audioSource.PlayOneShot(audioClip);
         }
+        //take the damage
         health -= damage;
+
+        //broadcast this event for UI
+        DamageEvent.Invoke();
+
         if (health <= 0)
         {
             Die();
@@ -72,6 +96,16 @@ public class DamageAndHealth : MonoBehaviour
         if(DeathAnimation != null)
         {
             Instantiate(DeathAnimation, transform.position, Quaternion.identity);
+        }
+        if (audioClip != null)
+        {
+            GameObject damageAudioGameObject = Instantiate<GameObject>(new GameObject());
+            AudioSource spawnedSoundSource =  damageAudioGameObject.AddComponent<AudioSource>();
+            spawnedSoundSource.volume = audioSource.volume;
+            spawnedSoundSource.clip = audioClip;
+            spawnedSoundSource.pitch = 0.7f;
+            spawnedSoundSource.Play();
+            Destroy(damageAudioGameObject, audioClip.length + 0.1f);
         }
 
         Destroy(gameObject);
@@ -85,7 +119,7 @@ public class DamageAndHealth : MonoBehaviour
             target = collision.gameObject.GetComponent<DamageAndHealth>();
             if ((whatYouCanDamage == (whatYouCanDamage | (1 << collision.gameObject.layer))) && target.canTakeDamage) //Daniel took the first part of this conditional off of the internet and doesn't know how it works
             {
-                Debug.Log("Damage Taken!");
+                //Debug.Log("Damage Taken!");
                 target.TakeDamage(damage);
                 invincibleTime = invincibleTimer;
             }
@@ -95,14 +129,14 @@ public class DamageAndHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Damage");
+        //Debug.Log("Damage");
         if (canDealDamage && invincibleTime <= 0)
         {
             target = collision.gameObject.GetComponent<DamageAndHealth>();
 
             if ((whatYouCanDamage == (whatYouCanDamage | (1 << collision.gameObject.layer))) && target.canTakeDamage) //Daniel took the first part of this conditional off of the internet and doesn't know how it works
             {
-                Debug.Log("Damage Taken!");
+                //Debug.Log("Damage Taken!");
                 target.TakeDamage(damage);
             }
 
@@ -119,6 +153,8 @@ public class DamageAndHealth : MonoBehaviour
         {
             this.health += health;
         }
+        //broadcast this event for UI
+        DamageEvent.Invoke();
     }
 
     IEnumerator Shake(GameObject character, float animLength = 0.25f, float animPower = 1) //Shake violently, courtesy of project Unleavened

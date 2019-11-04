@@ -4769,7 +4769,7 @@ GameObject:
   - component: {fileID: 5272435646146763158}
   - component: {fileID: 5272435646146763160}
   - component: {fileID: 5224186759989232144}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Tenacious Enemy Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4817,14 +4817,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641fcfbfb1bba324ab11d40d7078384a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   health: 1
   damage: 1
-  invincibleTime: 1
+  invincibleTime: 0
   canTakeDamage: 1
   canDealDamage: 1
   whatCanDamageYou:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 2816
   whatYouCanDamage:
     serializedVersion: 2
     m_Bits: 512
