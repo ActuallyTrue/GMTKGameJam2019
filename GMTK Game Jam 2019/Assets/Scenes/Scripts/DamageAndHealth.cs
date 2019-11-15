@@ -25,6 +25,9 @@ public class DamageAndHealth : MonoBehaviour
     public AudioClip audioClip;
     private AudioSource audioSource;
 
+    private SpriteRenderer spriteRenderer;
+    private bool blink = false;
+
     public int GetHealth { get => health; }
 
     // Start is called before the first frame update
@@ -48,6 +51,7 @@ public class DamageAndHealth : MonoBehaviour
                 }
             }
         }
+        spriteRenderer = GetComponent<SpriteRenderer>();
         invincibleTimer = 0;
     }
 
@@ -58,9 +62,31 @@ public class DamageAndHealth : MonoBehaviour
         {
             shakeTimer += Time.deltaTime;
         }
-        if(invincibleTimer > 0)
+        if (invincibleTimer > 0)
         {
             invincibleTimer -= Time.deltaTime;
+
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (invincibleTimer > 0)
+        {
+            if (blink == false)
+            {
+                blink = true;
+                spriteRenderer.enabled = false;
+            }
+            else
+            {
+                blink = false;
+                spriteRenderer.enabled = true;
+            }
+        }
+        else
+        {
+            spriteRenderer.enabled = true;
         }
     }
 

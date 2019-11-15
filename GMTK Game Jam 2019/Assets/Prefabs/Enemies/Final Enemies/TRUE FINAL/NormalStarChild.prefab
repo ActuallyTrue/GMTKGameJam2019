@@ -234,6 +234,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.2562109
       objectReference: {fileID: 0}
+    - target: {fileID: 5624891247559439954, guid: 7a354085fcc65e54b913dcd41175b277,
+        type: 3}
+      propertyPath: invincibleTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5624891247559439955, guid: 7a354085fcc65e54b913dcd41175b277,
         type: 3}
       propertyPath: SearchDistance
