@@ -48,7 +48,7 @@ public class DamageAndHealth : MonoBehaviour
                 }
             }
         }
-        invincibleTime = invincibleTimer;
+        invincibleTimer = 0;
     }
 
     // Update is called once per frame
@@ -58,9 +58,9 @@ public class DamageAndHealth : MonoBehaviour
         {
             shakeTimer += Time.deltaTime;
         }
-        if(invincibleTime > 0)
+        if(invincibleTimer > 0)
         {
-            invincibleTime -= Time.deltaTime;
+            invincibleTimer -= Time.deltaTime;
         }
     }
 
@@ -81,6 +81,8 @@ public class DamageAndHealth : MonoBehaviour
         }
         //take the damage
         health -= damage;
+        invincibleTimer = invincibleTime;
+
 
         //broadcast this event for UI
         DamageEvent.Invoke();
@@ -113,15 +115,15 @@ public class DamageAndHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
- 
-        if (canDealDamage && invincibleTime <= 0)
+        target = collision.gameObject.GetComponent<DamageAndHealth>();
+
+        if (canDealDamage && target.invincibleTimer <= 0)
         {
-            target = collision.gameObject.GetComponent<DamageAndHealth>();
-            if ((whatYouCanDamage == (whatYouCanDamage | (1 << collision.gameObject.layer))) && target.canTakeDamage) //Daniel took the first part of this conditional off of the internet and doesn't know how it works
+            
+            if ((whatYouCanDamage == (whatYouCanDamage | (1 << collision.gameObject.layer))) && target.canTakeDamage && (target.whatCanDamageYou == (target.whatCanDamageYou | (1 << this.gameObject.layer)))) //Daniel took the first part of this conditional off of the internet and doesn't know how it works
             {
-                //Debug.Log("Damage Taken!");
+                Debug.Log("Damage Taken!");
                 target.TakeDamage(damage);
-                invincibleTime = invincibleTimer;
             }
 
         }
@@ -129,14 +131,13 @@ public class DamageAndHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("Damage");
-        if (canDealDamage && invincibleTime <= 0)
-        {
-            target = collision.gameObject.GetComponent<DamageAndHealth>();
+        target = collision.gameObject.GetComponent<DamageAndHealth>();
 
-            if ((whatYouCanDamage == (whatYouCanDamage | (1 << collision.gameObject.layer))) && target.canTakeDamage) //Daniel took the first part of this conditional off of the internet and doesn't know how it works
+        if (canDealDamage && target.invincibleTimer <= 0)
+        {
+            if ((whatYouCanDamage == (whatYouCanDamage | (1 << collision.gameObject.layer))) && target.canTakeDamage && (target.whatCanDamageYou == (target.whatCanDamageYou | (1 << this.gameObject.layer)))) //Daniel took the first part of this conditional off of the internet and doesn't know how it works
             {
-                //Debug.Log("Damage Taken!");
+                Debug.Log("Damage Taken!");
                 target.TakeDamage(damage);
             }
 
