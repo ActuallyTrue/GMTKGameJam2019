@@ -66,35 +66,38 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (state == SpawnState.waiting)
+        if (!PauseMenu.isPaused)
         {
-
-            if (!IsEnemyAlive())
+            if (state == SpawnState.waiting)
             {
-                // Begin a new round
-                RoundStart();
-                return;
+
+                if (!IsEnemyAlive())
+                {
+                    // Begin a new round
+                    RoundStart();
+                    return;
+                }
+
+                else
+                {
+                    return;
+                }
+
             }
 
+            if (waveCountdown <= 0)
+            {
+
+                if (state != SpawnState.spawning)
+                {
+                    //Start spawning wave
+                    StartCoroutine(SpawnWave(waves[nextWave]));
+                }
+            }
             else
             {
-                return;
+                waveCountdown -= Time.deltaTime;
             }
-
-        }
-
-        if (waveCountdown <= 0)
-        {
-
-            if (state != SpawnState.spawning)
-            {
-                //Start spawning wave
-                StartCoroutine(SpawnWave(waves[nextWave]));
-            }
-        }
-        else
-        {
-            waveCountdown -= Time.deltaTime;
         }
     }
 

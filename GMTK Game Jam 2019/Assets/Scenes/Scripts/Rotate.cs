@@ -15,6 +15,9 @@ public class Rotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3 ( Time.deltaTime * 0, 0, spinSpeed ));
+        if (!PauseMenu.isPaused)
+        {
+            transform.Rotate(new Vector3(Time.deltaTime * 0, 0, spinSpeed));
+        }
     }
 }
